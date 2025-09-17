@@ -4,7 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MMFPSpoof Dataset</title>
-  <!-- <link rel="stylesheet" href="css/style.css" /> -->
+  <style>
+    table {
+      border-collapse: collapse;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+    }
+    .header {
+      background-color: #ff99cc; /* bright pink */
+      font-weight: bold;
+    }
+    .fcs {
+      background-color: #d8b4fe; /* light purple (lavender) */
+    }
+    .sow {
+      background-color: #ffb6c1; /* light pink */
+    }
+  </style>
 </head>
 <body>
   <main>
@@ -27,168 +47,141 @@
 
     <p>We use the LibriSpeech <em>train-clean-100</em> subset for the demo samples.</p>
 
-
-    <style>
-      table {
-        border-collapse: collapse;
-        text-align: center;
-        font-family: Arial, sans-serif;
-      }
-      th, td {
-        border: 1px solid #ccc;
-        padding: 8px 12px;
-      }
-      .header {
-        background-color: #f4c2c2; /* light pink */
-        font-weight: bold;
-      }
-      .fcs {
-        background-color: #f3d9fa; /* light purple */
-      }
-      .sow {
-        background-color: #f8c8dc; /* soft pink */
-      }
-    </style>
-  </head>
-  <body>
-
-  <div class="tables">
-    <div class="table-wrapper">
-      <table>
-        <tr>
-          <!-- Fully spoofed spans two rows -->
-          <td class="header" rowspan="2">Fully spoofed</td>
-          <!-- Partially Spoofed spans 6 columns -->
-          <td class="header" colspan="6">Partially Spoofed</td>
-        </tr>
-        <tr>
-          <!-- FCS spans 3 columns -->
-          <td class="fcs" colspan="3">Full-cut-seg (FCS)</td>
-          <!-- SOW spans 3 columns -->
-          <td class="sow" colspan="3">Seg-of-word (SOW)</td>
-        </tr>
-        <tr>
-          <td class="fcs">Original keywords</td>
-          <td class="fcs">Replacing by<br>Synonym/antonym</td>
-          <td class="fcs">Positive-negative<br>Restatement</td>
-          <td class="sow">Original keywords</td>
-          <td class="sow">Replacing by<br>Synonym/antonym</td>
-          <td class="sow">Positive-negative<br>Restatement</td>
-        </tr>
-
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Bonafide</strong></td>
-          <td colspan="7">
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <audio controls src="assets/audio/5339-14133-0026.flac"></audio>
-                <span>5339-14133-0026.wav</span>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><strong>XTTS-v2</strong></td>
-          <td><audio controls src="assets/audio/fully_xtts_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/original_full_xtts_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/synant_full_xtts_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/not_full_xtts_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/original_xtts_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/synant_xtts_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/not_xtts_5339-14133-0026.wav"></audio></td>
-        </tr>
-        <tr>
-          <td><strong>YourTTS</strong></td>
-          <td><audio controls src="assets/audio/fully_yourtts_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/original_full_yourtts_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/synant_full_yourtts_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/not_full_yourtts_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/original_yourtts_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/synant_yourtts_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/not_yourtts_5339-14133-0026.wav"></audio></td>
-        </tr>
-        <tr>
-          <td><strong>FreeVC</strong></td>
-          <td><audio controls src="assets/audio/fully_freevc_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/original_full_freevc_5339-14133-0026.wav"></audio></td>
-          <td></td>
-          <td></td>
-          <td><audio controls src="assets/audio/original_freevc_5339-14133-0026.wav"></audio></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><strong>GlowTTS</strong></td>
-          <td><audio controls src="assets/audio/fully_glowtts_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/original_full_glowtts_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/synant_full_glowtts_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/not_full_glowtts_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/original_glowtts_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/synant_glowtts_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/not_glowtts_5339-14133-0026.wav"></audio></td>
-        </tr>
-        <tr>
-          <td><strong>VITS</strong></td>
-          <td><audio controls src="assets/audio/fully_vits_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/original_full_vits_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/synant_full_vits_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/not_full_vits_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/original_vits_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/synant_vits_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/not_vits_5339-14133-0026.wav"></audio></td>
-        </tr>
-         <tr>
-          <td><strong>Meta-learned</strong></td>
-          <td><audio controls src="assets/audio/fully_toucan_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/original_full_toucan_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/synant_full_toucan_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/not_full_toucan_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/original_toucan_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/synant_toucan_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/not_toucan_5339-14133-0026.wav"></audio></td>
-        </tr>
-        <tr>
-          <td><strong>Tacotron2-DDC_ph</strong></td>
-          <td><audio controls src="assets/audio/fully_tacotron2_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/origianl_full_tacotron2_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/synant_full_tacotron2_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/not_full_tacotron2_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/original_tacotron2_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/synant_tacotron2_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/not_tacotron2_5339-14133-0026.wav"></audio></td>
-        </tr>
-        <tr>
-          <td><strong>FastPitch</strong></td>
-          <td><audio controls src="assets/audio/fully_fastpich_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/original_full_fastpitch_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/synant_full_fastpitch_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/not_full_fastpitch_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/original_fastpitch_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/synant_fastpitch_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/not_fastpitch_5339-14133-0026.wav"></audio></td>
-        </tr>
-        <tr>
-          <td><strong>Neural_HMM</strong></td>
-          <td><audio controls src="assets/audio/fully_neuralhmm_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/original_full_neuralhmm_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/synant_full_neuralhmm_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/not_full_neuralhmm_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/original_neuralhmm_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/synant_neuralhmm_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/not_neuralhmm_5339-14133-0026.wav"></audio></td>
-        </tr>
-        <tr>
-          <td><strong>Overflow</strong></td>
-          <td><audio controls src="assets/audio/fully_overflow_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/original_full_overflow_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/synant_full_overflow_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/not_full_overflow_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/original_overflow_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/synant_overflow_5339-14133-0026.wav"></audio></td>
-          <td><audio controls src="assets/audio/not_overflow_5339-14133-0026.wav"></audio></td>
-        </tr>
-        
-      </tbody>
+    <!-- Table -->
+    <div class="tables">
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <td class="header" rowspan="2">Fully spoofed</td>
+              <td class="header" colspan="6">Partially Spoofed</td>
+            </tr>
+            <tr>
+              <td class="fcs" colspan="3">Full-cut-seg (FCS)</td>
+              <td class="sow" colspan="3">Seg-of-word (SOW)</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fcs">Original keywords</td>
+              <td class="fcs">Replacing by<br>Synonym/antonym</td>
+              <td class="fcs">Positive-negative<br>Restatement</td>
+              <td class="sow">Original keywords</td>
+              <td class="sow">Replacing by<br>Synonym/antonym</td>
+              <td class="sow">Positive-negative<br>Restatement</td>
+            </tr>
+          </tbody>
+          <tr>
+            <td><strong>Bonafide</strong></td>
+            <td colspan="7">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                  <audio controls src="assets/audio/5339-14133-0026.flac"></audio>
+                  <span>5339-14133-0026.wav</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>XTTS-v2</strong></td>
+            <td><audio controls src="assets/audio/fully_xtts_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/original_full_xtts_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/synant_full_xtts_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/not_full_xtts_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/original_xtts_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/synant_xtts_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/not_xtts_5339-14133-0026.wav"></audio></td>
+          </tr>
+          <tr>
+            <td><strong>YourTTS</strong></td>
+            <td><audio controls src="assets/audio/fully_yourtts_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/original_full_yourtts_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/synant_full_yourtts_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/not_full_yourtts_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/original_yourtts_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/synant_yourtts_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/not_yourtts_5339-14133-0026.wav"></audio></td>
+          </tr>
+          <tr>
+            <td><strong>FreeVC</strong></td>
+            <td><audio controls src="assets/audio/fully_freevc_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/original_full_freevc_5339-14133-0026.wav"></audio></td>
+            <td></td>
+            <td></td>
+            <td><audio controls src="assets/audio/original_freevc_5339-14133-0026.wav"></audio></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><strong>GlowTTS</strong></td>
+            <td><audio controls src="assets/audio/fully_glowtts_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/original_full_glowtts_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/synant_full_glowtts_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/not_full_glowtts_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/original_glowtts_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/synant_glowtts_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/not_glowtts_5339-14133-0026.wav"></audio></td>
+          </tr>
+          <tr>
+            <td><strong>VITS</strong></td>
+            <td><audio controls src="assets/audio/fully_vits_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/original_full_vits_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/synant_full_vits_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/not_full_vits_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/original_vits_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/synant_vits_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/not_vits_5339-14133-0026.wav"></audio></td>
+          </tr>
+           <tr>
+            <td><strong>Meta-learned</strong></td>
+            <td><audio controls src="assets/audio/fully_toucan_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/original_full_toucan_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/synant_full_toucan_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/not_full_toucan_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/original_toucan_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/synant_toucan_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/not_toucan_5339-14133-0026.wav"></audio></td>
+          </tr>
+          <tr>
+            <td><strong>Tacotron2-DDC_ph</strong></td>
+            <td><audio controls src="assets/audio/fully_tacotron2_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/origianl_full_tacotron2_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/synant_full_tacotron2_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/not_full_tacotron2_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/original_tacotron2_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/synant_tacotron2_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/not_tacotron2_5339-14133-0026.wav"></audio></td>
+          </tr>
+          <tr>
+            <td><strong>FastPitch</strong></td>
+            <td><audio controls src="assets/audio/fully_fastpich_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/original_full_fastpitch_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/synant_full_fastpitch_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/not_full_fastpitch_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/original_fastpitch_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/synant_fastpitch_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/not_fastpitch_5339-14133-0026.wav"></audio></td>
+          </tr>
+          <tr>
+            <td><strong>Neural_HMM</strong></td>
+            <td><audio controls src="assets/audio/fully_neuralhmm_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/original_full_neuralhmm_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/synant_full_neuralhmm_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/not_full_neuralhmm_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/original_neuralhmm_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/synant_neuralhmm_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/not_neuralhmm_5339-14133-0026.wav"></audio></td>
+          </tr>
+          <tr>
+            <td><strong>Overflow</strong></td>
+            <td><audio controls src="assets/audio/fully_overflow_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/original_full_overflow_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/synant_full_overflow_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/not_full_overflow_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/original_overflow_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/synant_overflow_5339-14133-0026.wav"></audio></td>
+            <td><audio controls src="assets/audio/not_overflow_5339-14133-0026.wav"></audio></td>
+          </tr>
+          
+        </tbody>
     </table>
         
     <div style="height: 20px;"></div>
