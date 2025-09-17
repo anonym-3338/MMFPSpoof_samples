@@ -29,15 +29,15 @@ th {
 }
 
 thead th[rowspan=\"2\"] {
-  background-color: #EBD6FB;
+  background: #FBD1C6;
 }
 
 thead tr:nth-child(1) th[colspan=\"3\"]:first-of-type {
-  background-color: #ffffcc;
+  background: #FEE9F1;
 }
 
 thead tr:nth-child(1) th[colspan=\"3\"]:last-of-type {
-  background-color: #ffd9cc;
+  background: #E8D8FC;
 }
 
 audio {
@@ -48,5 +48,5 @@ audio {
 td:first-child {
   text-align: left;
   font-weight: bold;
-  background-color: #FEEBF6;
+  background: #FEEBF6;
 }
