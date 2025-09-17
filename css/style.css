@@ -29,7 +29,7 @@ th {
 }
 
 thead th[rowspan=\"2\"] {
-  background-color: yellow;
+  background-color: #EBD6FB;
 }
 
 thead tr:nth-child(1) th[colspan=\"3\"]:first-of-type {
@@ -48,5 +48,5 @@ audio {
 td:first-child {
   text-align: left;
   font-weight: bold;
-  background-color: #f9f9f9;
+  background-color: #FEEBF6;
 }
