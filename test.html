@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bảng mẫu có rowspan/colspan</title>
+  <style>
+    :root{
+      --bg-page:#fff9f6;
+      --text:#222;
+      --line:#d9d9d9;
+      --head-a:#F5CBCB;    /* cột bên trái (rowspan) */
+      --head-b:#F5CBCB;    /* cột “Fully …” (rowspan) */
+      --group-all:#ffe9f0; /* dải “nhóm lớn” */
+      --group-fcs:#FEEBF6; /* nhóm con 1 */
+      --group-sow:#EBD6FB; /* nhóm con 2 */
+      --head-bottom:#fff;  /* hàng tiêu đề cuối */
+      --row-alt:#fffefc;   /* sọc xen kẽ */
+      --round:14px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:24px;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg-page);
+      color:var(--text);
+      line-height:1.4;
+    }
+    h1{font-size:20px;margin:0 0 10px}
+    .table-wrap{
+      overflow:auto;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--round);
+      box-shadow:0 6px 24px rgba(0,0,0,.05);
+    }
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      min-width:860px; /* cho scroll ngang nếu hẹp */
+    }
+    th,td{
+      padding:10px 12px;
+      border-right:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      text-align:center;
+      vertical-align:middle;
+      font-size:14px;
+      white-space:nowrap;
+    }
+    thead th{
+      font-weight:700;
+      position:sticky; top:0; z-index:2;
+    }
+    /* bo góc */
+    thead tr:first-child th:first-child{border-top-left-radius:var(--round)}
+    thead tr:first-child th:last-child{border-top-right-radius:var(--round)}
+    tbody tr:last-child td:first-child{border-bottom-left-radius:var(--round)}
+    tbody tr:last-child td:last-child{border-bottom-right-radius:var(--round)}
+    /* màu tiêu đề theo lớp */
+    .head-left{background:var(--head-a)}
+    .head-left-2{background:var(--head-b)}
+    .group-all{background:var(--group-all)}
+    .group-fcs{background:var(--group-fcs)}
+    .group-sow{background:var(--group-sow)}
+    .head-bottom{background:var(--head-bottom)}
+    /* nội dung */
+    tbody td:first-child{
+      text-align:left; font-weight:600;
+      background:#fff; position:sticky; left:0; z-index:1;
+    }
+    tbody tr:nth-child(even) td{background:var(--row-alt)}
+    .note{font-size:12px; color:#666; margin-top:8px}
+    audio{width:180px; max-width:100%}
+  </style>
+</head>
+<body>
+  <h1>Bảng minh họa (thay nội dung để giống ảnh của bạn)</h1>
+
+  <div class="table-wrap">
+    <table aria-label="Bảng có gộp ô">
+      <thead>
+        <tr>
+          <th rowspan="3" class="head-left" scope="col">Cột trái (rowspan)</th>
+          <th rowspan="3" class="head-left-2" scope="col">Cột 2 (rowspan)</th>
+          <th colspan="6" class="group-all" scope="colgroup">NHÓM LỚN</th>
+        </tr>
+        <tr>
+          <th colspan="3" class="group-fcs" scope="colgroup">Nhóm con A</th>
+          <th colspan="3" class="group-sow" scope="colgroup">Nhóm con B</th>
+        </tr>
+        <tr>
+          <th class="head-bottom" scope="col">A1</th>
+          <th class="head-bottom" scope="col">A2</th>
+          <th class="head-bottom" scope="col">A3</th>
+          <th class="head-bottom" scope="col">B1</th>
+          <th class="head-bottom" scope="col">B2</th>
+          <th class="head-bottom" scope="col">B3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Hàng 1 -->
+        <tr>
+          <td scope="row">Hàng 1 — mô tả</td>
+          <td>Giá trị</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <!-- Hàng 2 (ví dụ có <audio>) -->
+        <tr>
+          <td scope="row">Hàng 2 — mô tả</td>
+          <td>Giá trị</td>
+          <td><audio controls src=""></audio></td>
+          <td><audio controls src=""></audio></td>
+          <td><audio controls src=""></audio></td>
+          <td><audio controls src=""></audio></td>
+          <td><audio controls src=""></audio></td>
+          <td><audio controls src=""></audio></td>
+        </tr>
+        <!-- Thêm các hàng khác bên dưới -->
+      </tbody>
+    </table>
+  </div>
+
+  <p class="note">
+    Cách dùng: đổi tiêu đề “NHÓM LỚN / Nhóm con A / B …”, số cột (colspan),
+    và nội dung mỗi ô để khớp với ảnh gốc. Nếu bảng của bạn có ít/many cột,
+    hãy tăng/giảm số <code>&lt;th&gt;</code> ở hàng tiêu đề cuối cùng và điều chỉnh
+    <code>colspan</code> tương ứng.
+  </p>
+</body>
+</html>
